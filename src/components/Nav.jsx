@@ -60,7 +60,10 @@ function HomeAboutNav({ dark }) {
       </div>
 
       <div className="hidden lg:flex items-center gap-2">
-        <a href={dark ? '/#projects' : '/info'} className={`type-body ${text} hover:opacity-70 transition-opacity`}>{dark ? 'projects' : 'about me'}</a>
+        {dark
+          ? <a href="/#projects" className={`type-body ${text} hover:opacity-70 transition-opacity`}>projects</a>
+          : <Link to="/info" className={`type-body ${text} hover:opacity-70 transition-opacity`}>about me</Link>
+        }
         <span className={`type-body ${text}`}>•</span>
         <a href="mailto:tim@homerun.studio" className={`type-body ${text} hover:opacity-70 transition-opacity`}>contact</a>
       </div>
