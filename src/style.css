@@ -1,0 +1,339 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@import "./fonts.css";
+
+/* ── Palette tokens ─────────────────────────────────────────────────────── */
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #020202;
+
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-100: #F2F2F2;
+  --color-neutral-200: #CCCCCC;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #1A1A1A;
+  --color-neutral-950: #0D0D0D;
+
+  --color-primary-50: #F0FDF8;
+  --color-primary-100: #C5F5E2;
+  --color-primary-200: #A8F1D4;
+  --color-primary-300: #8BECC5;
+  --color-primary-500: #6EE7B7;
+  --color-primary-700: #428B6E;
+  --color-primary-800: #2C5C49;
+  --color-primary-900: #162E25;
+  --color-primary-950: #0B1712;
+
+  --color-secondary-50: #E7ECFC;
+  --color-secondary-100: #CEDAFA;
+  --color-secondary-200: #9DB5F5;
+  --color-secondary-300: #6D8FF0;
+  --color-secondary-500: #0B45E6;
+  --color-secondary-700: #07298A;
+  --color-secondary-800: #041C5C;
+  --color-secondary-900: #020E2E;
+  --color-secondary-950: #010717;
+
+  --color-tertiary-50: #FFFDED;
+  --color-tertiary-100: #FFFADA;
+  --color-tertiary-200: #FFF5B6;
+  --color-tertiary-300: #FFF191;
+  --color-tertiary-400: #FFEC6D;
+  --color-tertiary-500: #FDE374;
+  --color-tertiary-700: #998B2B;
+  --color-tertiary-800: #665C1D;
+  --color-tertiary-900: #332E0E;
+  --color-tertiary-950: #1A1707;
+
+  --color-brand-50: #F9F3F2;
+  --color-brand-100: #F3E8E6;
+  --color-brand-200: #E7D0CD;
+  --color-brand-300: #DBB9B3;
+  --color-brand-500: #C38A81;
+  --color-brand-700: #75534D;
+  --color-brand-800: #4E3734;
+  --color-brand-900: #271C1A;
+  --color-brand-950: #140E0D;
+}
+
+/* ── Semantic tokens ─────────────────────────────────────────────────────── */
+:root {
+  --color-bg-primary: var(--color-neutral-50);
+  --color-bg-secondary: var(--color-neutral-100);
+  --color-bg-tertiary: var(--color-white);
+  --color-bg-dark: var(--color-neutral-950);
+  --color-text-primary: var(--color-neutral-950);
+  --color-border-primary: var(--color-neutral-200);
+
+  /* Dark surface tokens */
+  --color-dark-text: var(--color-neutral-50);
+  --color-bg-dark-secondary: var(--color-neutral-800);
+  --color-dark-border: var(--color-neutral-50);
+
+  /* Control state tokens */
+  --color-text-on-active: var(--color-neutral-950);
+
+  /* Accent — secondary button bg + text */
+  --color-accent:      var(--color-primary-500);
+  --color-accent-text: var(--color-neutral-950);
+
+  /* Active toggle pill bg (paint bucket selected) */
+  --color-control-active: var(--color-white);
+
+  /* Logo layer colors — default (multi-color) */
+  --logo-square:  var(--color-tertiary-400);
+  --logo-circle:  var(--color-primary-500);
+  --logo-diamond: var(--color-secondary-300);
+}
+
+[data-theme="primary"] {
+  --color-bg-primary: var(--color-primary-50);
+  --color-bg-secondary: var(--color-primary-100);
+  --color-bg-tertiary: var(--color-primary-50);
+  --color-bg-dark: var(--color-primary-700);
+  --color-text-primary: var(--color-primary-700);
+  --color-border-primary: var(--color-primary-500);
+  --color-accent:         var(--color-primary-500);
+  --color-accent-text:    var(--color-neutral-950);
+  --color-control-active: var(--color-primary-100);
+  --logo-square:  var(--color-primary-500);
+  --logo-circle:  var(--color-primary-200);
+  --logo-diamond: var(--color-primary-700);
+}
+
+[data-theme="secondary"] {
+  --color-bg-primary: var(--color-secondary-50);
+  --color-bg-secondary: var(--color-secondary-100);
+  --color-bg-tertiary: var(--color-secondary-50);
+  --color-bg-dark: var(--color-secondary-700);
+  --color-text-primary: var(--color-secondary-700);
+  --color-border-primary: var(--color-secondary-500);
+  --color-accent:         var(--color-secondary-500);
+  --color-accent-text:    var(--color-neutral-50);
+  --color-control-active: var(--color-secondary-100);
+  --logo-square:  var(--color-secondary-500);
+  --logo-circle:  var(--color-secondary-200);
+  --logo-diamond: var(--color-secondary-700);
+}
+
+[data-theme="tertiary"] {
+  --color-bg-primary: var(--color-tertiary-50);
+  --color-bg-secondary: var(--color-tertiary-100);
+  --color-bg-tertiary: var(--color-tertiary-50);
+  --color-bg-dark: var(--color-tertiary-700);
+  --color-text-primary: var(--color-tertiary-700);
+  --color-border-primary: var(--color-tertiary-300);
+  --color-accent:         var(--color-tertiary-500);
+  --color-accent-text:    var(--color-neutral-950);
+  --color-control-active: var(--color-tertiary-100);
+  --logo-square:  var(--color-tertiary-500);
+  --logo-circle:  var(--color-tertiary-200);
+  --logo-diamond: var(--color-tertiary-700);
+}
+
+[data-theme="brand"] {
+  --color-bg-primary: var(--color-brand-50);
+  --color-bg-secondary: var(--color-brand-100);
+  --color-bg-tertiary: var(--color-brand-50);
+  --color-bg-dark: var(--color-brand-700);
+  --color-text-primary: var(--color-brand-700);
+  --color-border-primary: var(--color-brand-500);
+  --color-accent:         var(--color-brand-500);
+  --color-accent-text:    var(--color-neutral-950);
+  --color-control-active: var(--color-brand-100);
+  --logo-square:  var(--color-brand-500);
+  --logo-circle:  var(--color-brand-200);
+  --logo-diamond: var(--color-brand-700);
+}
+
+/* ── Dark mode overrides ─────────────────────────────────────────────────── */
+
+/* Default dark (no color theme active) */
+[data-dark]:not([data-theme]) {
+  --color-bg-primary:    var(--color-neutral-950);
+  --color-bg-secondary:  var(--color-neutral-900);
+  --color-bg-tertiary:   var(--color-neutral-950);
+  --color-text-primary:  var(--color-neutral-50);
+  --color-border-primary: var(--color-neutral-200);
+}
+
+[data-theme="primary"][data-dark] {
+  --color-bg-primary:    var(--color-primary-900);
+  --color-bg-secondary:  var(--color-primary-800);
+  --color-bg-tertiary:   var(--color-primary-900);
+  --color-text-primary:  var(--color-primary-300);
+  --color-border-primary: var(--color-primary-500);
+}
+
+[data-theme="secondary"][data-dark] {
+  --color-bg-primary:    var(--color-secondary-900);
+  --color-bg-secondary:  var(--color-secondary-800);
+  --color-bg-tertiary:   var(--color-secondary-900);
+  --color-text-primary:  var(--color-secondary-300);
+  --color-border-primary: var(--color-secondary-500);
+}
+
+[data-theme="tertiary"][data-dark] {
+  --color-bg-primary:    var(--color-tertiary-900);
+  --color-bg-secondary:  var(--color-tertiary-800);
+  --color-bg-tertiary:   var(--color-tertiary-900);
+  --color-text-primary:  var(--color-tertiary-300);
+  --color-border-primary: var(--color-tertiary-500);
+}
+
+[data-theme="brand"][data-dark] {
+  --color-bg-primary:    var(--color-brand-900);
+  --color-bg-secondary:  var(--color-brand-800);
+  --color-bg-tertiary:   var(--color-brand-900);
+  --color-text-primary:  var(--color-brand-300);
+  --color-border-primary: var(--color-brand-500);
+}
+
+/* Page transition — images slide, text blurs */
+@keyframes img-enter {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes text-blur-in {
+  from { opacity: 0; filter: blur(8px); transform: translateY(8px); }
+  to   { opacity: 1; filter: blur(0px); transform: translateY(0); }
+}
+
+/* Slide: real content images only (not nav icons) */
+.page-entering img:not(.nav-logo),
+.page-entering video,
+.page-entering .page-img {
+  animation: img-enter 1000ms ease-in-out backwards;
+}
+
+/* Blur: every element carrying a type token class, plus the nav logomark and page-fade elements */
+.page-entering :is(
+  .type-display, .type-page-heading, .type-section-title,
+  .type-body, .type-body-sm, .type-label, .type-tag, .type-tooltip
+),
+.page-entering .nav-logo,
+.page-entering .page-fade {
+  animation: text-blur-in 1000ms ease-in-out backwards;
+}
+
+/* Imgs nested inside type-body elements (e.g. button arrow icons)
+   inherit the parent's blur — don't also slide them */
+.page-entering :is(
+  .type-display, .type-page-heading, .type-section-title,
+  .type-body, .type-body-sm, .type-label, .type-tag, .type-tooltip
+) img {
+  animation: none;
+}
+
+@keyframes word-reveal {
+  from { opacity: 0; filter: blur(6px); transform: translateY(8px); }
+  to   { opacity: 1; filter: blur(0);   transform: translateY(0); }
+}
+@keyframes info-overlay-fade {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes info-nav-slide {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@keyframes story-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes slide-in-right {
+  from { transform: translateX(24px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slide-in-left {
+  from { transform: translateX(-24px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* ── Semantic type tokens ───────────────────────────────────────────────── */
+@layer components {
+  /* Ohno Blazeface hero / display text */
+  .type-display {
+    @apply font-display;
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: -1.12px;
+  }
+  /* Large sans page heading (project case study titles) */
+  .type-page-heading {
+    @apply font-sans;
+    font-size: 64px;
+    line-height: 72px;
+  }
+  /* Medium sans section/project title */
+  .type-section-title {
+    @apply font-sans;
+    font-size: 2rem;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+  /* Primary body copy */
+  .type-body {
+    @apply font-sans;
+    font-size: 1rem;
+    line-height: 22px;
+  }
+  /* Small body / captions */
+  .type-body-sm {
+    @apply font-sans;
+    font-size: 0.75rem;
+    line-height: 18px;
+    letter-spacing: 0.0125em;
+  }
+  /* Mono eyebrow / case study label */
+  .type-label {
+    @apply font-mono;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  /* Mono badge / highlight tag */
+  .type-tag {
+    @apply font-mono;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+  /* XL body — info page hero paragraphs */
+  .type-body-xl {
+    @apply font-sans;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.0125em;
+  }
+  /* Small tooltip copy */
+  .type-tooltip {
+    @apply font-sans;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* Hide scrollbar while keeping scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth color transitions when cycling themes */
+*, *::before, *::after {
+  transition-property: background-color, color, border-color;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
