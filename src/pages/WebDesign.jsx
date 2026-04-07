@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 const IMAGES = [
@@ -142,10 +143,8 @@ export default function WebDesign() {
                   Web Design
                 </h1>
                 <p className="type-body text-text-primary mt-4" style={{ animationDelay: '500ms' }}>
-                  I was the Lead Designer and a Fintech Startup serving the trucking industry
-                  overlapping with Brand and Product. Before I started brand was a hodgepodge of
-                  assets, Figma files, workflows with a lack of unity between our marketing site
-                  and core product.
+                  A selection of websites I've designed and built across startups, small businesses, and larger organizations. These projects reflect a hands-on approach to design where I own both the visual system and its implementation. Working across different scales and constraints has shaped how I think about building interfaces that are clear, flexible, and ready to ship.
+
                 </p>
               </div>
 
