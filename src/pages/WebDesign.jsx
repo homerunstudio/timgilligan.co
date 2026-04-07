@@ -26,15 +26,6 @@ export default function WebDesign() {
   const touchStartX = useRef(null);
   const carouselRef = useRef(null);
   const intervalRef = useRef(null);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      videoRef.current?.play();
-    }, 7500);
-    return () => clearTimeout(timer);
-  }, []);
-
   const resetInterval = () => {
     if (!intervalRef.current) return;
     clearInterval(intervalRef.current);
@@ -168,7 +159,7 @@ export default function WebDesign() {
                       <div key={i} className="min-w-full">
                         {img.video ? (
                           <div style={{ aspectRatio: '2400/1977', overflow: 'hidden' }}>
-                            <video ref={videoRef} src={img.src} loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                            <video src={img.src} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                           </div>
                         ) : (
                           <img src={img.src} alt={img.alt} className="w-full h-auto block" draggable={false} />
@@ -212,7 +203,7 @@ export default function WebDesign() {
               {IMAGES.map((img, i) => (
                 img.video ? (
                   <div key={i} className="w-full rounded-xl overflow-hidden" style={{ aspectRatio: '2400/1977' }}>
-                    <video ref={videoRef} src={img.src} loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animationDelay: `${i * 150}ms` }} />
+                    <video src={img.src} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animationDelay: `${i * 150}ms` }} />
                   </div>
                 ) : (
                   <img key={i} src={img.src} alt={img.alt} className="w-full h-auto block rounded-xl" style={{ animationDelay: `${i * 150}ms` }} />
