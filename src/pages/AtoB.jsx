@@ -10,6 +10,9 @@ const IMAGES = [
   { src: '/images/AtoB/atob-03.jpg', alt: 'AtoB — design system' },
   { src: '/images/AtoB/color-switcher.mp4', alt: 'AtoB — color switcher', video: true },
   { src: '/images/AtoB/atob-05.jpg', alt: 'AtoB — product experience' },
+  { src: '/images/AtoB/atob-06.jpg', alt: 'AtoB — product experience' },
+  { src: '/images/AtoB/atob-07.jpg', alt: 'AtoB — product experience' },
+  { src: '/images/AtoB/email.mp4', alt: 'AtoB — email animation', video: true, emailVideo: true },
 ];
 
 // Clone first slide at end for seamless looping
@@ -236,8 +239,12 @@ export default function AtoB() {
                   >
                     {SLIDES.map((img, i) => (
                       <div key={i} className="min-w-full">
-                        {img.video ? (
-                          <div style={{ backgroundColor: '#F9F9F9', aspectRatio: '2400/1977', padding: '64px 120px', display: 'flex', alignItems: 'center' }}>
+                        {img.emailVideo ? (
+                          <div style={{ backgroundColor: '#010002', aspectRatio: '2400/1977', padding: '32px 40px 0', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflow: 'hidden' }}>
+                            <video src={img.src} autoPlay loop muted playsInline style={{ width: '55%', height: 'auto', display: 'block' }} />
+                          </div>
+                        ) : img.video ? (
+                          <div style={{ backgroundColor: '#F9F9F9', aspectRatio: '2400/1977', padding: '16px 20px', display: 'flex', alignItems: 'center' }}>
                             <video src={img.src} autoPlay loop muted playsInline className="w-full h-auto block" />
                           </div>
                         ) : (
@@ -287,7 +294,11 @@ export default function AtoB() {
             {/* Right: stacked images, start at top so they show behind transparent logo row */}
             <div className="hidden lg:flex flex-col gap-6 pt-[64px]">
               {IMAGES.map((img, i) => (
-                img.video ? (
+                img.emailVideo ? (
+                  <div key={i} className="w-full rounded-xl overflow-hidden" style={{ backgroundColor: '#010002', aspectRatio: '2400/1977', padding: '128px 120px 0', display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+                    <video src={img.src} autoPlay loop muted playsInline style={{ width: '50%', height: 'auto', display: 'block', animationDelay: `${i * 150}ms` }} />
+                  </div>
+                ) : img.video ? (
                   <div key={i} className="w-full rounded-xl overflow-hidden" style={{ backgroundColor: '#F9F9F9', padding: '64px 120px' }}>
                     <video src={img.src} autoPlay loop muted playsInline className="w-full h-auto block" style={{ animationDelay: `${i * 150}ms` }} />
                   </div>

@@ -139,10 +139,7 @@ export default function BrandDesign() {
                   Brand Design
                 </h1>
                 <p className="type-body text-text-primary mt-4" style={{ animationDelay: '500ms' }}>
-                  I was the Lead Designer and a Fintech Startup serving the trucking industry
-                  overlapping with Brand and Product. Before I started brand was a hodgepodge of
-                  assets, Figma files, workflows with a lack of unity between our marketing site
-                  and core product.
+                  I have been working in the tech industry for over 10 years and during that time have gotten opportunties to partner wtih some of the top brands in the industry. While my focus recently has shifted toward product and systems design, this work has impacted my fundamental approach to design to create unified experiences that connect brand, product, and marketing.
                 </p>
               </div>
 
