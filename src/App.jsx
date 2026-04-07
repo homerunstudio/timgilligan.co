@@ -6,6 +6,7 @@ import Alchemy from './pages/Alchemy';
 import WebDesign from './pages/WebDesign';
 import BrandDesign from './pages/BrandDesign';
 import Info from './pages/Info';
+import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ function AnimatedRoutes() {
         <Route path="/projects/web-design" element={<WebDesign />} />
         <Route path="/projects/brand-design" element={<BrandDesign />} />
         <Route path="/info" element={<Info />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
