@@ -10,6 +10,8 @@ import {
   Browsers,
   BoundingBox,
   PenNib,
+  ArrowDown,
+  ArrowUpRight,
 } from '@phosphor-icons/react';
 import { ThemeProvider, useTheme } from '../context/ThemeContext';
 import Footer from '../components/Footer';
@@ -206,11 +208,7 @@ function Hero() {
             <div>
               <Button href="#projects" onClick={(e) => { e.preventDefault(); scrollTo('projects'); }} className="px-8 py-3">
                 View projects
-                <img
-                  src="https://www.figma.com/api/mcp/asset/66d30058-3d92-4549-bb97-166914f29942"
-                  alt=""
-                  className="w-4 h-4 block"
-                />
+                <ArrowDown size={16} weight="bold" />
               </Button>
             </div>
           </div>
@@ -222,8 +220,6 @@ function Hero() {
 }
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
-
-const ICON_CASE_STUDY = 'https://www.figma.com/api/mcp/asset/bcedb1ba-2c94-4d33-9edb-d968c2dfedc1';
 
 const PROJECTS = [
   {
@@ -319,8 +315,7 @@ function Projects() {
             </span>
             <div className="flex items-center gap-3 flex-nowrap overflow-x-auto scrollbar-hide lg:flex-wrap lg:justify-end">
               {project.caseStudy && (
-                <span className="bg-primary-100 inline-flex items-center gap-0.5 h-[26px] pb-[3px] pt-0.5 px-[11px] rounded-full shrink-0">
-                  <img src={ICON_CASE_STUDY} alt="" className="w-[4px] h-[5px] block" />
+                <span className="bg-primary-100 inline-flex items-center justify-center pl-3 py-1 rounded-full shrink-0" style={{ paddingRight: 'calc(0.75rem + 0.5px)' }}>
                   <span className="type-tag text-primary-700">Case Study</span>
                 </span>
               )}
@@ -415,11 +410,7 @@ function Details() {
           <div>
             <Button href="/info" className="px-8 py-3">
               More about me
-              <img
-                src="https://www.figma.com/api/mcp/asset/20a23782-6a37-42b0-b200-f0bcf896e7b0"
-                alt=""
-                className="w-4 h-4 block"
-              />
+              <ArrowUpRight size={16} weight="bold" />
             </Button>
           </div>
         </div>
