@@ -78,7 +78,7 @@ function Nav() {
 
   return (
     <div className="w-full flex flex-col items-center px-2.5">
-      <div className="flex items-center justify-between w-full max-w-container-sm lg:max-w-container-lg pt-4 lg:pt-6">
+      <div className="flex items-center justify-between w-full max-w-container-sm lg:max-w-container-lg xl:max-w-[1920px] pt-4 lg:pt-6">
 
         <div className="flex items-center gap-3">
           <Logo />
@@ -182,14 +182,14 @@ function Hero() {
   }, []);
 
   return (
-    <div className="w-full xl:max-w-[1440px] xl:mx-auto transition-[padding] duration-500 ease-in-out xl:px-8">
+    <div className="w-full transition-[padding] duration-500 ease-in-out xl:px-20">
 
       {/* Nav outside the card — xl+ only */}
       <div className="hidden xl:block">
         <Nav />
       </div>
 
-      <section className="relative flex flex-col gap-12 lg:gap-30 w-full items-center h-[100dvh] lg:h-[700px] overflow-hidden lg:pb-[200px] transition-[border-radius,margin-top] duration-500 ease-in-out xl:rounded-xl xl:mt-6 xl:pt-44">
+      <section className="relative flex flex-col gap-12 lg:gap-30 w-full items-center h-[100dvh] lg:h-[700px] overflow-hidden lg:pb-[200px] transition-[border-radius,margin-top] duration-500 ease-in-out xl:rounded-xl xl:mt-6 xl:pt-44 xl:max-w-[1920px] xl:mx-auto">
 
         <div className={`absolute inset-0 -z-10 transition-opacity duration-500 ${colorMode ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <div data-us-project="OYl2BFBa21s4JauYFvIE" style={{ width: '100%', height: '100%' }}></div>
@@ -202,7 +202,7 @@ function Hero() {
 
         <div className="flex-1 lg:flex-none w-full flex flex-col items-start justify-center lg:justify-start px-3 xl:px-[152px] pb-12 lg:pb-0">
           <div className="w-full max-w-container-sm lg:max-w-container-lg xl:max-w-none mx-auto flex flex-col gap-8 xl:items-center">
-            <h1 className="type-display text-[40px] lg:text-4xl lg:leading-[72px] text-text-primary xl:text-center">
+            <h1 className="type-display text-[40px] lg:text-4xl lg:leading-[72px] text-text-primary xl:text-center xl:max-w-[1136px]">
               tim gilligan is a web and product designer located in california.
             </h1>
             <div>
@@ -304,8 +304,8 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="w-full flex flex-col items-center px-2.5 scroll-mt-8 lg:scroll-mt-16">
-      <div className="flex flex-col gap-4 items-end w-full max-w-container-sm lg:max-w-container-lg mx-auto">
+    <section id="projects" className="w-full flex flex-col items-center px-2.5 xl:px-20 scroll-mt-8 lg:scroll-mt-16">
+      <div className="flex flex-col gap-4 items-end w-full max-w-container-sm lg:max-w-container-lg xl:max-w-[1920px] mx-auto">
 
         {/* Header: title + tags */}
         <div className="border-b border-border-primary pb-4 w-full">
@@ -393,14 +393,14 @@ function Projects() {
 function Details() {
   const { themeIndex } = useTheme();
   return (
-    <section className="w-full flex flex-col items-center px-2.5 relative">
-      <div className="w-full max-w-container-sm lg:max-w-container-lg mx-auto flex flex-col lg:flex-row lg:gap-6 items-start">
+    <section className="w-full flex flex-col items-center px-2.5 xl:px-20 relative">
+      <div className="w-full max-w-container-sm lg:max-w-container-lg xl:max-w-[1920px] mx-auto flex flex-col lg:flex-row lg:gap-6 items-start xl:justify-center">
 
         <div className="flex items-center pt-6 lg:pt-6 lg:w-[152px] shrink-0">
           <span className="type-body text-text-primary">details</span>
         </div>
 
-        <div className="flex flex-col gap-6 lg:flex-1 mt-6 lg:mt-0">
+        <div className="flex flex-col gap-6 lg:flex-1 xl:flex-none xl:max-w-[1136px] mt-6 lg:mt-0">
           <p className="type-display text-[40px] lg:text-4xl lg:leading-[72px] text-text-primary">
             I like the sweet spot between brand and product, focusing on scalable design systems.&nbsp;
           </p>
@@ -429,7 +429,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <Details />
-        <Footer />
+        <Footer wide />
       </div>
     </ThemeProvider>
   );

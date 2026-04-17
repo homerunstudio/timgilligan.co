@@ -6,7 +6,7 @@ export default function Footer({ wide = false, dark = false }) {
 
   return (
     <footer className={`w-full flex flex-col items-center px-2.5 ${wide ? 'xl:px-20' : ''}`}>
-      <div className={`flex items-center justify-between w-full max-w-container-sm lg:max-w-container-lg ${wide ? 'xl:max-w-none' : ''} mx-auto`}>
+      <div className={`flex items-center justify-between w-full max-w-container-sm lg:max-w-container-lg ${wide ? 'xl:max-w-[1920px]' : ''} mx-auto`}>
 
         <div className="py-[10px]">
           <span className={`type-body ${text}`} style={noAnim}>ⓒ 2026</span>

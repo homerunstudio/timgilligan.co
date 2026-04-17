@@ -172,7 +172,7 @@ module.exports = {
       },
       maxWidth: {
         'container-sm': '608px',
-        'container-lg': '1032px',
+        'container-lg': '1300px',
       },
       screens: {
         'xs': '475px',
